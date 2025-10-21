@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     init: true
     ports:
-      - "8000:80"
+      - "14001:80"
 
   frontend:
     build:
@@ -15,4 +15,4 @@ services:
     depends_on:
       - backend
     ports:
-      - "3000:80"
+      - "14002:80"
