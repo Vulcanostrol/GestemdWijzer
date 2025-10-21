@@ -1,0 +1,15 @@
+python-dotenv~=1.1.0
+PyYAML~=6.0.2
+tqdm~=4.67.1
+requests~=2.32.3
+pydantic~=2.11.3
+structlog~=25.2.0
+pandas~=2.3.3
+lxml~=6.0.2
+
+langchain-core~=1.0.0
+langchain-openai~=1.0.1
+
+beautifulsoup4~=4.13.4
+
+fastapi[standard]~=0.115.13

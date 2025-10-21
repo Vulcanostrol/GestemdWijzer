@@ -1,0 +1,10 @@
+-r default.txt
+
+# Dev-specific
+black~=25.1.0
+pre-commit~=4.2.0
+mypy~=1.15.0
+pytest~=8.3.5
+pytest-env~=1.1.5
+watchdog~=6.0.0
+notebook~=7.4.4
