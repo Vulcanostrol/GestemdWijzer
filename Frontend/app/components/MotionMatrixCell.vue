@@ -13,7 +13,7 @@ const showDifference = ref(false);
 
 const openDifference = async () => {
   console.log("open difference", partyA, partyB);
-  const result = await fetch(`http://192.168.2.1:8000/api/v1/votes/disagreements?party_a=${partyA}&party_b=${partyB}`);
+  const result = await fetch(`http://api.gestemdwijzer.koenvandenbrink.com/api/v1/votes/disagreements?party_a=${partyA}&party_b=${partyB}`);
   if (result.status !== 200) throw new Error(`Failed to fetch disagreements. Status ${result.status}`);
   const disagreements = await result.json();
   subjects.value = disagreements.subjects;

@@ -42,7 +42,7 @@ const matrix = ref<VoteMatrix | undefined>(undefined);
 const parties = ref<string[] | undefined>(undefined);
 
 onMounted(async () => {
-  const result = await fetch("http://192.168.2.1:8000/api/v1/votes/matrix");
+  const result = await fetch("http://api.gestemdwijzer.koenvandenbrink.com/api/v1/votes/matrix");
   if (result.status !== 200) throw new Error(`Failed to fetch votes. Status ${result.status}`);
   const matrixData = await result.json();
   matrix.value = matrixData;
