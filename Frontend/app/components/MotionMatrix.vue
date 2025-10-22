@@ -41,8 +41,12 @@ type VoteMatrix = {
 const matrix = ref<VoteMatrix | undefined>(undefined);
 const parties = ref<string[] | undefined>(undefined);
 
+const config = useRuntimeConfig();
+const apiBase = config.public.apiBase;
+console.log(apiBase);
+
 onMounted(async () => {
-  const result = await fetch("http://api.gestemdwijzer.koenvandenbrink.com/api/v1/votes/matrix");
+  const result = await fetch(`${apiBase}/api/v1/votes/matrix`);
   if (result.status !== 200) throw new Error(`Failed to fetch votes. Status ${result.status}`);
   const matrixData = await result.json();
   matrix.value = matrixData;

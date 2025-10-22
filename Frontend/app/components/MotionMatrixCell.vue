@@ -11,9 +11,13 @@ const subjects = ref<{
 }[]>([]);
 const showDifference = ref(false);
 
+const config = useRuntimeConfig();
+const apiBase = config.public.apiBase;
+console.log(apiBase);
+
 const openDifference = async () => {
   console.log("open difference", partyA, partyB);
-  const result = await fetch(`http://api.gestemdwijzer.koenvandenbrink.com/api/v1/votes/disagreements?party_a=${partyA}&party_b=${partyB}`);
+  const result = await fetch(`${apiBase}/api/v1/votes/disagreements?party_a=${partyA}&party_b=${partyB}`);
   if (result.status !== 200) throw new Error(`Failed to fetch disagreements. Status ${result.status}`);
   const disagreements = await result.json();
   subjects.value = disagreements.subjects;
